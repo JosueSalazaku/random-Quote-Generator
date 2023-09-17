@@ -5,11 +5,19 @@ import reload_icon from '../Assets/reload.png'
 
 const RandomQuote = () => {
  
+    let quotes = [];
+
+    async function loadQuotes() {
+        const response = await fetch("https://type.fit/api/quotes");
+        quotes = await response.json();
+    }
+    
     const [quote,setQuote] = useState({
         text: "Throughout Heaven and Earth, I alone am honored.",
         author: "Gojo Satoru",
     });
-  
+    loadQuotes()
+
     return (
    
    
