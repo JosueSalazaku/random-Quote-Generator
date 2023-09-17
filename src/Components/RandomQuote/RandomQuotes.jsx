@@ -12,6 +12,11 @@ const RandomQuote = () => {
         quotes = await response.json();
     }
     
+    const random = () => {
+        const select = quotes[Math.floor(Math.random() * quotes.length)];
+        setQuote(select)
+    }
+
     const [quote,setQuote] = useState({
         text: "Throughout Heaven and Earth, I alone am honored.",
         author: "Gojo Satoru",
@@ -26,9 +31,9 @@ const RandomQuote = () => {
      <div>
         <div className="line"></div>
         <div className="bottom">
-            <div className="author">{quote.author}</div>
+            <div className="author">{quote.author.split(',')[0]}</div>
            <div className="icons">
-            <img src={reload_icon} alt="" /></div> 
+            <img src={reload_icon} onClick={() => {random()}} alt="" /></div> 
             
         </div>
      </div>
