@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './RandomQuotes.css'
-import reload_icon from '../Assets/refresh+icon-1320184117585691057.png'
+import reload_icon from '../Assets/reload.png'
 
 
 const RandomQuote = () => {
